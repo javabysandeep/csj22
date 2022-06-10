@@ -16,5 +16,6 @@ public class Demo2 {
         System.out.println(product);
     }
 
+    void m1(){}
 
 }
