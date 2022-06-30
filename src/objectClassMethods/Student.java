@@ -16,4 +16,9 @@ public class Student {
     public int hashCode() {
         return Objects.hash(roll);
     }
+
+    @Override
+    public void finalize() throws Throwable {
+        System.out.println("Finalize method will be called by Garbage collector");
+    }
 }
