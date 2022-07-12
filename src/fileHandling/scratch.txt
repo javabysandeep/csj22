@@ -1,0 +1,25 @@
+File
+// To read or write data in terms of bytes
+InputStream
+    - FileInputStream
+    - BufferedInputStream
+    -ObjectInputStream
+OutputStream
+    - FileOutputStream
+    - BufferedOutputStream
+    - ObjectOutputStream
+
+// To read or write data in terms of characters
+Reader
+    -FileReader
+    -BufferedReader
+Writer
+    -FileWriter
+    -BufferedWriter
+
+- In order to do this, we need to implement Serializable(I)
+- Serialization: Saving the object in a file --> ObjectOutputStream
+- Deserialization: Reading the object from a file
+- trasient: to prevent some fields being serialized
+
+
