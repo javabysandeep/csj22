@@ -1,8 +1,8 @@
 package fileHandling;
 
-import java.io.Serializable;
+import java.io.*;
 
-public class Student implements Serializable {
+public class Student implements Externalizable {
     int studentId;
     String studentName;
     String username;
@@ -26,5 +26,15 @@ public class Student implements Serializable {
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 '}';
+    }
+
+    @Override
+    public void writeExternal(ObjectOutput out) throws IOException {
+
+    }
+
+    @Override
+    public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
+
     }
 }
