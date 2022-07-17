@@ -1,0 +1,27 @@
+# Framework:
+    - Set of predefined code. In terms of java framework, code is present inside classes, interfaces, methods
+    - All collection framework code is present in java.util package
+    - Object : It is an instance of a class. Inside the object we have instance variables. Instance variables can be primitive as well as reference variables
+
+# Disadvantages Array
+1. Can store only homogeneous type data
+2. fixed in nature.
+3. There will be either shortage or wastage of memory spaces
+4. For every requirement such as searching, sorting, inserting, deleting , developer is responsible.
+
+# What is collection?
+- It means group of objects. Objects can be of same type of different type.
+- All these objects will be part of some container.
+- Collection is also framework.
+- Collection is also a interface present inside the java.util package.
+
+# Why do we need collection?
+- To Store objects that can be of same type or different type.
+- Collections are growable in nature.
+- For every requirement, there is method support available.
+
+# Collection(I)
+
+
+
+
