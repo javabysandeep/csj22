@@ -1,11 +1,11 @@
-package collectionFramework;
+package collectionFramework.listDemos;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-class ProductSortingAnonymousWay {
+class ProductSortingMethodRefernceWay {
     public static void main(String[] args) {
         Product product1 = new Product(101,"mobile",10000);
         Product product2 = new Product(1,"laptop",5000);
@@ -23,12 +23,7 @@ class ProductSortingAnonymousWay {
         productList.forEach(System.out::println);
         System.out.println("After sorting based on price");
 
-        Collections.sort(productList, new Comparator<Product>() {
-            @Override
-            public int compare(Product o1, Product o2) {
-                return o1.getProductId()-o2.getProductId();
-            }
-        });
+        Collections.sort(productList, Comparator.comparing(Product::getProductName));
         productList.forEach(System.out::println);
     }
 }

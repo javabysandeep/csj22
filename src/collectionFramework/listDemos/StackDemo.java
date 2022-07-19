@@ -1,4 +1,4 @@
-package collectionFramework;
+package collectionFramework.listDemos;
 
 import java.util.Stack;
 

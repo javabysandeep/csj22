@@ -1,4 +1,4 @@
-package collectionFramework;
+package collectionFramework.listDemos;
 
 public class Product {
     private int productId;

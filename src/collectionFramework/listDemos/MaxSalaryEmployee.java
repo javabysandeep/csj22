@@ -1,11 +1,9 @@
-package collectionFramework;
+package collectionFramework.listDemos;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
-public class ListEmployee {
+public class MaxSalaryEmployee {
     public static void main(String[] args) {
         List<Employee> employeeList = new ArrayList<>();
         Employee pooja = new Employee(1,"Pooja",43000);
@@ -18,15 +16,15 @@ public class ListEmployee {
         employeeList.add(anjali);
         employeeList.add(nikhil);
 
-        for (Employee employee:employeeList) {
-            if (employee.getSalary()>10000){
-                System.out.println(employee);
+       //java 7 way : traditional way
+        Employee highestPaidEmp = employeeList.get(0);
+        for (Employee emp:employeeList) {
+            if(emp.getSalary() > highestPaidEmp.getSalary()){
+                highestPaidEmp = emp;
             }
         }
-        List<Employee> highestPaidEmp = employeeList.stream().filter(employee -> employee.getSalary() > 10000).collect(Collectors.toList());
-        System.out.println(highestPaidEmp);
-
+        System.out.println("Max salary emp: "+highestPaidEmp);
         //java 8 way
-        System.out.println("Max salary employee: "+employeeList.stream().max(Comparator.comparing(Employee::getSalary)));
+       // System.out.println("Max salary employee: "+employeeList.stream().max(Comparator.comparing(Employee::getSalary)));
     }
 }

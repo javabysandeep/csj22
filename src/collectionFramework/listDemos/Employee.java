@@ -1,4 +1,4 @@
-package collectionFramework;
+package collectionFramework.listDemos;
 
 public class Employee implements Comparable<Employee> {
     private int employeeId;
