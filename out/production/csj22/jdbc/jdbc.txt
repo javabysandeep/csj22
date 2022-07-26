@@ -1,0 +1,91 @@
+#File drawbacks:
+- Unorganized data
+- no security
+- no roles
+- data duplication
+
+#Database:
+- permanent data storage in organized way
+- In case of relational, database has tables. Table has rows and columns
+- We use roles
+- security
+-  no data duplication
+- database can be stored on local or remote machine.
+- in order to manipulate the database files we have DBMS.
+
+#DBMS: Database Management Systems.
+- It is a software that helps to manipulate the databases.
+- with this software we can create, delete, update, retrieve databases/tables
+- e.g. MySQL, Oracle SQL, Postgress, MS-SQL Server.....
+
+# Database client software:
+- It is used to access the database from local or remote machine.
+- eg. MySQl Workbench, Oracle SQL developer, Datagrip, DBViewr, PG Admin,....
+
+# Database Server Software:
+- It is used to make machine as database server.
+- e.g. Mysql Community Server, Oracle Server, MS-SQL Server, Amazon RDS
+
+#JDBC
+- JDBC stands for Java Database Connectivity.
+- Java App --> DriverManager ---> Driver(implementation by vendor) -(SQL Query)-> DBMS --> DB
+- JDBC helps you access the databases from java application
+- JDBC is an API(Specification/ Interfaces)
+
+# How to connect to a database? Who Knows this ?
+- database vendors knows how to connect with the DB.
+- App1 --> Logic1(developed by MySQL)[mysql connector.jar] --> MySql DB
+- App1 --> Logic2(developed by Oracle) --> Oracle DB
+- App1 --> Logic3(developed by Postgress) --> PostGress DB
+- App1 --> Logic4(developed by Amazon) --> Amazon RDS
+- App1 --> Logic5(developed by MS-SQL) --> MS-SQL Server DB
+
+
+# Steps to connect with database using JDBC:
+1. Load the Driver class[Impl provided by db vendor] into the memory. Class.forName("com.mysql.cj.jdbc.Driver");
+2. Register the Driver with the DriverManager. { static block from Driver class provided by vendor}
+3. Get the connection from DriverManager.
+    - Connection con = DriverManager.getConnection(url,username, password);//ConnectionImpl
+    * Connection(I) provided by jdbc api. for the same ConnectionImpl is provided by mysql
+    * DriverManager(CC) provided by jdbc api.
+4. In order to execute the queries, we need to get object of Statement.
+    - Statement stmt = connection.createStatement();//StatementImpl
+    * Statement(I) provided by jdbc api. for the same StatementImpl is provided by MySQl
+
+5. We execute the queries with the help of statement object.
+    - To execute SELECT queries: statment.executeQuery();
+    - To execute DDL queries[create table, drop table] : statement.execute();
+    - To execute DML queries[insert, update, delete,alter]: statement.executeUpdate();
+
+6. In case of select queries, we get the result and we store it in the ResultSet
+    ResultSet rs = statement.executeQuery("SELCT * from tableName");
+    - read the content from resultSet: next(), getXXX();
+
+7. Close the connection: connection.close();
+
+# How the SQL queries  are processed?
+1. Tokenization
+2. parsing of tokens
+3. Query optimization
+4. Execute the Query.
+
+# CRUD Operations
+
+# Statement(I)
+- we use statement to execute static queries.
+- In case of statement all the query processing steps will be performed every time.
+
+# PreparedStatement(I)
+- to execute dynamic queries
+- to avoid sql injection
+
+# CallableStatement(I)
+- To call the stored procedures from the java application
+
+
+
+
+
+
+
+
